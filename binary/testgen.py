@@ -44,7 +44,12 @@ random_test(    10,     10,     0.5)
 random_test(    10,    100,      -1) # all zeros
 random_test(    10,    100,       2) # all ones
 random_test(  1000,   1000,     0.5)
-random_test(  1000,   1000,     0.5)
+random_test(  1000,   50000,     0.5)
+random_test(  1000,   10000,     0.7)
+zero_then_one(500, 500, 100000)
+one_then_zero(400, 600, 100000)
+first_line(1000, 100000)
+
 random_test(100000, 100000,     0.7)
 random_test(100000, 100000,     0.3)
 random_test(100000, 100000,     0.8)
