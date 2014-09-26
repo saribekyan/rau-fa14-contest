@@ -20,7 +20,7 @@ def gen_test(n, m):
 
 add_test(np.ones(10) * 100)
 add_test(np.ones(100000) * 10000)
-add_test(np.arange(100000) + 1)
+add_test(np.arange(10000) + 1)
 
 gen_test(100, 10)
 gen_test(100, 10)
