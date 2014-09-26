@@ -98,7 +98,7 @@ void solve(long long a, long long b, long long &x, long long &y) {
 long long inverse(long long x) {
     long long inv, k;
     solve(MOD, x, k, inv);
-    return inv;
+    return (inv + MOD) % MOD;
 }
 int main() {
     // generate primes
