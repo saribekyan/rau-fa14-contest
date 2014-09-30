@@ -5,7 +5,7 @@ MAX = 100000000
 def check(X, Y, x, y, r):
     assert abs(X) <= MAX and abs(Y) <= MAX
 
-    assert len(x) <= 100
+    assert len(x) <= 300
     assert len(x) == len(y) and len(y) == len(r)
     assert (abs(x) <= MAX).sum() == len(x)
     assert (abs(y) <= MAX).sum() == len(x)
@@ -23,18 +23,18 @@ num = 1
 def add_test(X, Y, x, y, r): # add params
     check(X, Y, np.array(x), np.array(y), np.array(r))
 
-    import matplotlib.pyplot as plt
-    fig = plt.gcf()
+   # import matplotlib.pyplot as plt
+   # fig = plt.gcf()
 
-    ax = plt.gca()
-    ax.cla() # clear things for fresh plot
-    # change default range so that new circles will work
-    ax.set_xlim((-100,1000))
-    ax.set_ylim((-100,700))
+   # ax = plt.gca()
+   # ax.cla() # clear things for fresh plot
+   # # change default range so that new circles will work
+   # ax.set_xlim((-100,1000))
+   # ax.set_ylim((-100,700))
 
-    for i in xrange(len(x)):
-        fig.gca().add_artist(plt.Circle((x[i], y[i]), r[i], color='r'))
-    fig.savefig('plotcircles.png')
+   # for i in xrange(len(x)):
+   #     fig.gca().add_artist(plt.Circle((x[i], y[i]), r[i], color='r'))
+   # fig.savefig('plotcircles.png')
 
     global num
     f = open('tests/' + str(num).zfill(3), 'w')
@@ -49,6 +49,25 @@ def add_test(X, Y, x, y, r): # add params
 
 def random_test(n, X, Y):
     d = np.zeros((n, 3))
+
+   # for i in xrange(n / 30):
+   #     while True:
+   #         d[i][:2] = np.random.random_integers(-1000, 1000, 2)
+   #         d[i][2] = np.random.randint(10, 20) + 1
+   #         x, y, r = tuple(d[i])
+   #         if x ** 2 + y **2 <= r ** 2:
+   #             continue
+   #         if (x - X) ** 2 + (y - Y) ** 2 <= r ** 2:
+   #             continue
+
+   #         j = 0
+   #         while j < i:
+   #             if (x - d[j][0]) ** 2 + (y - d[j][1]) ** 2 <= (r + d[j][2]) ** 2:
+   #                 break
+   #             j += 1
+
+   #         if j == i:
+   #             break
 
     for i in xrange(n/2):
         while True:
@@ -71,8 +90,8 @@ def random_test(n, X, Y):
 
     for i in xrange(n/2, n):
         while True:
-            d[i][:2] = np.random.random_integers(-100, 100, 2)
-            d[i][2] = np.random.randint(7, np.random.randint(5) + 11) + 1
+            d[i][:2] = np.random.random_integers(-1000, 1000, 2)
+            d[i][2] = np.random.randint(10, 20) + 1
             x, y, r = tuple(d[i])
             if x ** 2 + y **2 <= r ** 2:
                 continue
@@ -99,21 +118,21 @@ add_test(0, 500, [0,  500, 100,  45, 10, 600, 600, 500, 1000, 600],
                  [100, 70,  10, 500, 10,   0, 400,   0,    0, 500],
                  [10,  19,  10,  30, 10,  40,  40,  50,   50,  50]);
 
-random_test(100, 92203231, 100000000)
-random_test(100, 92203231, 100000000)
-random_test(100, 92203231, 100000000)
-random_test(100, 92203231, 100000000)
-random_test(100, -92203231, 100000000)
-random_test(100, 92203231, 100000000)
-random_test(100, 92203231, -10000000)
-random_test(100, 92203231, 100000000)
-random_test(100, -2203231, 1000000)
-random_test(100, 92203231, -100000000)
-random_test(100, 92203231, 100000)
-random_test(100, -2203231, 100000000)
-random_test(100, -92203231, -100000000)
-random_test(100, -92203231, -100000000)
-random_test(100, -92203231, -100000000)
-random_test(100, -92203231, -100000000)
-random_test(100, -92203231, -100000000)
+random_test(300, 92203231, 100000000)
+random_test(300, 92203231, 100000000)
+random_test(300, 92203231, 100000000)
+random_test(300, 92203231, 100000000)
+random_test(300, -92203231, 100000000)
+random_test(300, 92203231, 100000000)
+random_test(300, 92203231, -10000000)
+random_test(300, 92203231, 100000000)
+random_test(300, -2203231, 1000000)
+random_test(300, 92203231, -100000000)
+random_test(300, 92203231, 100000)
+random_test(300, -2203231, 100000000)
+random_test(300, -92203231, -100000000)
+random_test(300, -92203231, -100000000)
+random_test(300, -92203231, -100000000)
+random_test(300, -92203231, -100000000)
+random_test(300, -92203231, -100000000)
 

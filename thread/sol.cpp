@@ -134,13 +134,13 @@ int main() {
         for (int j = 0; j < 2; ++j) {
             if (R < g[2 * (n - 2) + i][2 * (n - 1) + j]) {
                 p = 2 * (n - 2) + i;
-                q = 2 * (n - 2) + j;
+                q = 2 * (n - 1) + j;
             }
             R = max(R, g[2 * (n - 2) + i][2 * (n - 1) + j]);
         }
     }
     printf("%.5lf\n", 2 * PI * R);
-    /*printf("%d %d %.5lf\n", R, cnt[p][q], 2 * PI * R);
+   /* printf("%d %d %.5lf\n", R, cnt[p][q], 2 * PI * R);
 
      while (q != p) {
         printf(" %d\n", q);
