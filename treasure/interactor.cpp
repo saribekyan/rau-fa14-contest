@@ -46,13 +46,13 @@ int main(int argc, char * argv[]) {
         }
         if (fabs(tmp - area) < (1e-5)) {
             cout << "Yes\n" << flush;
-            tout << OK;
+            tout << OK << flush;
             return OK;
         } else {
             cout << "No\n" << flush;
         }
     }
-    tout << PE;
+    tout << PE << flush;
     return PE;
 }
 
