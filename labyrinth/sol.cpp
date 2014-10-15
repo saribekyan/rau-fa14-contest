@@ -1,6 +1,7 @@
 #include <cstdio>
 #include <vector>
 #include <iostream>
+#include <cassert>
 using namespace std;
 
 int l, r;
@@ -24,6 +25,9 @@ bool try_kuhn (int v) {
 int main() {
     int m;
     scanf("%d%d%d", &l, &r, &m);
+    assert(1 <= l && l <= 100);
+    assert(1 <= r && r <= 100);
+    assert(0 <= m && m <= 10000);
     g.resize(l);
     vector<int> cl(l), cr(r);
     for (int i = 0; i < l; ++i) {
@@ -36,6 +40,8 @@ int main() {
     while (m--) {
         int p, q;
         scanf("%d%d", &p, &q);
+        assert(1 <= p && p <= l);
+        assert(1 <= q && q <= r);
         --p; --q;
         g[p].push_back(q);
         if (cl[p] == cr[q]) {

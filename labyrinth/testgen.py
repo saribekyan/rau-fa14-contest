@@ -57,3 +57,4 @@ add_test(concat(full(50, 49), random(40, 48, 6000)))
 add_test(concat(random(50, 39, 6000), random(40, 48, 3000)))
 add_test(concat(random(50, 50, 3000), random(40, 48, 3000)))
 
+add_test(empty(100, 100))
