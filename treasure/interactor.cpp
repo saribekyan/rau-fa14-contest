@@ -7,6 +7,7 @@ using namespace std;
 #define M 30000
 
 #define OK 0
+#define PE 2
 
 int main(int argc, char * argv[]) {
     setName("interacts with user program");
@@ -44,14 +45,13 @@ int main(int argc, char * argv[]) {
         }
         if (fabs(tmp - area) < (1e-5)) {
             cout << "Yes\n" << flush;
-            tout << 1;
+            tout << 0 << flush;
             return OK;
         } else {
             cout << "No\n" << flush;
-            tout << 0;
         }
     }
-    tout << 2;
+    tout << PE << flush;
     return PE;
 }
 
