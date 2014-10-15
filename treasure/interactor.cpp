@@ -52,6 +52,7 @@ int main(int argc, char * argv[]) {
             cout << "No\n" << flush;
         }
     }
+    cerr << "Too many queries\n" << flush;
     tout << PE << flush;
     return PE;
 }
