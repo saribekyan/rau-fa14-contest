@@ -80,7 +80,6 @@ int main() {
         } else {
             pair<int, int> u = find(p);
             pair<int, int> v = find(q);
-            printf("%d\n", t);
             if (par_dist(u) != par_dist(v)) {
                 printf("Unknown\n");
             } else if ((u.second + v.second) % 2 == 0) {
