@@ -36,8 +36,13 @@ int main(int argc, char * argv[]) {
     area = fabs(area);
 
     for (int m = 0; m < M; ++m) {
+	if (ouf.seekEof()) {
+		cerr << "User program stopped without finding the treasure\n";
+		return WA;		
+	}
         double p = ouf.readDouble(0, X);
         double q = ouf.readDouble(0, Y);
+	cerr << "GOT: " << p << ' ' << q << '\n';
 
         double tmp = 0.0;
         for (int i = 0; i < n; ++i) {
