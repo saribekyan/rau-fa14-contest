@@ -1,6 +1,6 @@
 import numpy as np
 
-num = 1
+num = 2
 def add_test(g): # add params
     global num
     a = np.arange(1, g[0] + 1)
@@ -28,8 +28,10 @@ def random(l, r, m):
     return (l, r, np.transpose(np.vstack([np.random.random_integers(1, l, m), np.random.random_integers(1, r, m)])))
 
 def path(n):
-    return (n, n, np.transpose(np.vstack([np.arange(n).repeat(2)[:-1], np.arange(n).repeat(2)[1:]])))
+    return (n, n, 1 + np.transpose(np.vstack([np.arange(n).repeat(2)[:-1], np.arange(n).repeat(2)[1:]])))
 
+
+add_test(path(5))
 add_test(full(1, 1))
 add_test(full(10, 10))
 add_test(full(9, 10))

@@ -50,12 +50,12 @@ int main() {
         int c1 = cl[p];
         int c2 = cr[q];
         for (int i = 0; i < l; ++i) {
-            if (cl[i] == c1) {
+            if (cl[i] == c1 || cl[i] == c2) {
                 cl[i] = min(c1, c2);
             }
         }
         for (int i = 0; i < r; ++i) {
-            if (cr[i] == c2) {
+            if (cr[i] == c2 || cr[i] == c1) {
                 cr[i] = min(c1, c2);
             }
         }
@@ -66,6 +66,11 @@ int main() {
         used.assign(l, false);
         try_kuhn(v);
     }
+
+    //for (int i = 0; i < r; ++i) {
+    //    cerr << mt[i] << ' ';
+    // }
+    //cerr << '\n';
 
     int comp = 0;
     for (int i = 0; i < l + r; ++i) {
@@ -82,6 +87,7 @@ int main() {
                 ++in_matching;
             }
         }
+        //cerr << cnt << '\n';
         if (cnt != in_matching) {
             printf("Samvel\n");
             return 0;
