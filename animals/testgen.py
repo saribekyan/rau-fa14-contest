@@ -23,6 +23,8 @@ def random_test(n, l):
 
     return d
 
+add_test(['armen', 'barmen', 'arm'])
+
 add_test(['a'])
 add_test(['asdf'])
 add_test(['asdf', 'asdf'])
