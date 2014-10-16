@@ -1,5 +1,6 @@
 #include <cstdio>
 #include <vector>
+#include <cassert>
 using namespace std;
 
 long long min(long long a, long long b) {
@@ -11,9 +12,11 @@ long long min(long long a, long long b) {
 int main() {
     long long n;
     scanf("%lld", &n);
+    assert(1 <= n && n <= 200);
     vector<long long> a(2 * n + 1, 0), s(2 * n + 1, 0);
     for (long long i = 1; i <= n; ++i) {
         scanf("%lld", &a[i]);
+        assert(1 <= a[i] && a[i] <= 500);
         a[i + n] = a[i];
     }
     for (long long i = 1; i < 2 * n + 1; ++i) {
