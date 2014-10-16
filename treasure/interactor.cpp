@@ -51,6 +51,7 @@ int main(int argc, char * argv[]) {
         }
         if (fabs(tmp - area) < (1e-5)) {
             cout << "Yes\n" << flush;
+	    cerr << m + 1 << " steps\n";
             tout << OK << flush;
             return OK;
         } else {
@@ -58,7 +59,7 @@ int main(int argc, char * argv[]) {
         }
     }
     cerr << "Too many queries\n" << flush;
-    tout << PE << flush;
-    return PE;
+    tout << WA << flush;
+    return WA;
 }
 
