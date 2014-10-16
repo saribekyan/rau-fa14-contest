@@ -3,9 +3,11 @@
 #include <map>
 #include <stack>
 #include <algorithm>
+#include <cassert>
 using namespace std;
 
 #define MOD 1000003
+#define M 500000
 
 class MaxQueue {
 private:
@@ -49,18 +51,18 @@ public:
 };
 
 vector<int> get_primes() {
-    vector<bool> is_prime(MOD + 1, true);
+    vector<bool> is_prime(M + 1, true);
     is_prime[0] = is_prime[1] = false;
-    for (int i = 4; i <= MOD; i += 2) {
+    for (int i = 4; i <= 500000; i += 2) {
         is_prime[i] = false;
     }
     
     vector<int> primes;
     primes.push_back(2);
-    for (int i = 3; i * i <= MOD; i += 2) {
+    for (int i = 3; i * i <= 500000; i += 2) {
         if (is_prime[i]) {
             primes.push_back(i);
-            for (int j = i * i; j <= MOD; j += i) {
+            for (int j = i * i; j <= 500000; j += i) {
                 is_prime[j] = false;
             }
         }
@@ -108,21 +110,24 @@ int main() {
     // solve
     int n, k;
     scanf("%d%d", &n, &k);
+    assert(1 <= n && n <= 50000);
+    assert(1 <= k && k <= n);
     vector<int> p(n);
     for (int i = 0; i < n; ++i) {
         scanf("%d", &p[i]);
+        assert(1 <= p[i] && p[i] <= M);
     }
 
     long long large_mul = 1;
     long long ans = MOD;
 
     vector<MaxQueue> prime_pows(m);
-    map<int, int> large_prime_count;
+    vector<int> large_prime_count(M, 0);
     for (int i = 0; i < n; ++i) {
         int t = p[i];
         vector<int> c = prime_cts(t, primes);
         if (t != 1) {
-            if (large_prime_count.find(t) == large_prime_count.end()) {
+            if (large_prime_count[t] == 0) {
                 large_prime_count[t] = 1;
                 large_mul = (large_mul * t) % MOD;
             } else {
@@ -138,7 +143,6 @@ int main() {
             prime_cts(t, primes);
             --large_prime_count[t];
             if (large_prime_count[t] == 0) {
-                large_prime_count.erase(t);
                 large_mul = (large_mul * inverse(t)) % MOD;
             }
             for (int j = 0; j < m; ++j) {
