@@ -14,7 +14,7 @@ def add_test(p, k): # add params
     num += 1
 
 MOD = 1000003
-M = 500000
+M = 100000
 
 def gen_primes():
     is_p = np.ones(M + 1, dtype='bool')
@@ -38,28 +38,28 @@ add_test(np.ones(1000) * 1993, 500)
 add_test(np.arange(1000) + 1234, 300)
 add_test((np.arange(1000) + 1) * 10, 523)
 
-add_test(primes[np.random.random_integers(70000 / 2, 75000 / 2, 1000)], 200)
-add_test(primes[np.random.random_integers(70000 / 2, 75000 / 2, 1000)], 200)
+add_test(primes[np.random.random_integers(7000, 7500, 1000)], 200)
+add_test(primes[np.random.random_integers(7000, 7500, 1000)], 200)
 
-add_test(primes[np.random.random_integers(1, 75000 / 2, 1000)], 300)
-add_test(primes[np.random.random_integers(1, 75000 / 2, 1000)], 400)
+add_test(primes[np.random.random_integers(1, 7500, 1000)], 300)
+add_test(primes[np.random.random_integers(1, 7500, 1000)], 400)
 
-add_test(np.random.random_integers(1, 1000000 / 2, 1000), 234)
-add_test(np.random.random_integers(900000 / 2, 1000000 / 2, 1000), 123)
-add_test(np.random.random_integers(900000 / 2, 1000000 / 2, 1000), 123)
+add_test(np.random.random_integers(1, M, 1000), 234)
+add_test(np.random.random_integers(90000, M, 1000), 123)
+add_test(np.random.random_integers(90000, M, 1000), 123)
 
-add_test(np.ones(100000 / 2), 49238 / 2)
-add_test(np.ones(100000 / 2) * 429773, 50000 / 2)
-add_test(np.arange(100000 / 2) + 1234, 3000 / 2)
-add_test((np.arange(100000 / 2) + 1) * 10, 52321 / 2)
+add_test(np.ones(10000), 4923)
+add_test(np.ones(10000) * 99997, 5000)
+add_test(np.arange(10000) + 1234, 300)
+add_test((np.arange(10000) + 1) * 10, 5232)
 
-add_test(primes[np.random.random_integers(70000 / 2, 75000 / 2, 100000 / 2)], 20000 / 2)
-add_test(primes[np.random.random_integers(60000 / 2, 75000 / 2, 100000 / 2)], 20000 / 2)
+add_test(primes[np.random.random_integers(7000, 7500, 10000)], 2000)
+add_test(primes[np.random.random_integers(6000, 7500, 10000)], 2000)
 
-add_test(primes[np.random.random_integers(1, 75000 / 2, 100000 / 2)], 30000 / 2)
-add_test(primes[np.random.random_integers(1, 75000 / 2, 100000 / 2)], 30000 / 2)
+add_test(primes[np.random.random_integers(1, 7500, 10000)], 300)
+add_test(primes[np.random.random_integers(1, 7500, 10000)], 300)
 
-add_test(np.random.random_integers(1, 1000000 / 2, 100000 / 2), 23456 / 2)
-add_test(np.random.random_integers(900000 / 2, 1000000 / 2, 100000 / 2), 12345 / 2)
-add_test(np.random.random_integers(900000 / 2, 1000000 / 2, 100000 / 2), 12345 / 2)
+add_test(np.random.random_integers(1, 100000, 10000), 2345)
+add_test(np.random.random_integers(90000, 100000, 10000), 1234)
+add_test(np.random.random_integers(90000, 100000, 10000), 1234)
 

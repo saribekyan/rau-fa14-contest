@@ -7,7 +7,7 @@
 using namespace std;
 
 #define MOD 1000003
-#define M 500000
+#define M 100000
 
 class MaxQueue {
 private:
@@ -110,7 +110,7 @@ int main() {
     // solve
     int n, k;
     scanf("%d%d", &n, &k);
-    assert(1 <= n && n <= 50000);
+    assert(1 <= n && n <= 10000);
     assert(1 <= k && k <= n);
     vector<int> p(n);
     for (int i = 0; i < n; ++i) {
