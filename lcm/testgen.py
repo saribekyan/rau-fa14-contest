@@ -31,6 +31,7 @@ def gen_primes():
 
 primes = gen_primes()
 
+add_test([1, 3, 4, 5], 3)
 add_test([1, 2, 3, 4, 5], 3)
 
 add_test(np.ones(1000), 492)
@@ -62,4 +63,6 @@ add_test(primes[np.random.random_integers(1, 7500, 10000)], 300)
 add_test(np.random.random_integers(1, 100000, 10000), 2345)
 add_test(np.random.random_integers(90000, 100000, 10000), 1234)
 add_test(np.random.random_integers(90000, 100000, 10000), 1234)
+
+add_test(primes, 8000)
 
