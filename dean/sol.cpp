@@ -1,6 +1,7 @@
 #include <cstdio>
 #include <vector>
 #include <algorithm>
+#include <cassert>
 using namespace std;
 
 vector<int> par, rnk;
@@ -73,7 +74,7 @@ int main() {
                 x = 2;
             }
             if (x == 1) {
-                printf("asdfasdf\n");
+                assert(false);
                 return 0;
             }
             join(p, q);
